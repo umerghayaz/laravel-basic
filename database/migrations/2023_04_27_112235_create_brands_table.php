@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('brands', function (Blueprint $table) {
             $table->id();
             $table->string('brand_name');
-            $table->string('btrand_image');
+            $table->string('brand_image');
             $table->timestamps();
         });
     }
