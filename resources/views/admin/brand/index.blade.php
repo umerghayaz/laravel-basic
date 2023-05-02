@@ -28,14 +28,14 @@
                   <tr>
                     <th scope="row">{{ $brands->firstItem()+$loop->index}}</th>
                     <td>{{ $brand->brand_name}}</td>
-                    <td><img src='' alt=''></td>
+                    <td><img src="{{asset($brand->brand_image)}}" style="width:76px;height:46px;"></td>
                     @if($brand->created_at==NULL)
                     <span class="text-danger">NO DATA SET</span>
                     @else
                     <td>{{ $brand->created_at->diffForHumans()}}</td>
                     <td>
-                      <button class="btn-btn-info"><a href="{{ url('brand/edit/'.$brands->id) }}" >Edit</a></button>
-                      <button> <a href="{{ url('brand/category/'.$brands->id) }}" class="btn-btn-danger">Soft Delete</a></button>
+                      <button class="btn-btn-info"><a href="{{ url('brand/edit/'.$brand->id) }}" >Edit</a></button>
+                      <button> <a href="{{ url('brand/category/'.$brand->id) }}" class="btn-btn-danger">Soft Delete</a></button>
 
                     </td>
                     @endif
@@ -61,7 +61,7 @@
 All Category
 </div>
 <div class='card-body'>
-<form action="{{ route('store.brand') }}" method='POST'>
+<form action="{{ route('store.brand') }}" method='POST'  enctype="multipart/form-data" method='POST'>
     @csrf
   <div class="form-group">
     <label for="exampleInputEmail1">Enter Brand_name</label>
@@ -73,18 +73,17 @@ All Category
 
 
 
-<div class='card-body'>
-    <form action="{{ route('store.brand') }}" method='POST'>
+
         @csrf
       <div class="form-group">
         <label for="exampleInputEmail1">Select Image</label>
-        <input type="file" name='brand_image' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input type="file" name='brand_image' class="form-control" id="brand_image" aria-describedby="emailHelp">
         @error('brand_image')
         <span class='text-danger'>{{ $message}}</span>
         @enderror
       </div>
       <button type="submit" class="btn btn-primary">Add a Brand</button>
-    </form></div>
+  
     </div>
 </div>
 </div>
