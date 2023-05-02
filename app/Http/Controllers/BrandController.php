@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\models\Brand;
+use App\Models\Multipic;
 // use Carbon\Carbon;
 use Illuminate\Support\Carbon;
 
@@ -86,6 +87,7 @@ return  Redirect()->back()->with('success','brand inserted succesfully');
 
         }
         public function Multipic(){
-            return view('admin.multipic.index');
+            $images=Multipic::all();
+            return view('admin.multipic.index',compact('images'));
         }
 }

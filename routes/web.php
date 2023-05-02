@@ -47,7 +47,7 @@ Route::post('/brand/add',[BrandController::class, 'StoreBrand'])->name('store.br
 Route::get('/brand/edit/{id}',[BrandController::class, 'BrandEdit'])->name('update.edit');
 Route::post('/brand/update/{id}',[BrandController::class, 'Update']);
 Route::get('/brand/delete/{id}',[BrandController::class, 'Delete']);
-Route::get('/multi/image',[CategoryController::class, 'Multipic'])->name('multi.image');
+Route::get('/multi/image',[BrandController::class, 'Multipic'])->name('multi.image');
 
 
 
