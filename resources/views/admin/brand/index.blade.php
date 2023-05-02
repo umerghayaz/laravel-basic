@@ -35,7 +35,7 @@
                     <td>{{ $brand->created_at->diffForHumans()}}</td>
                     <td>
                       <button class="btn-btn-info"><a href="{{ url('brand/edit/'.$brand->id) }}" >Edit</a></button>
-                      <button> <a href="{{ url('brand/category/'.$brand->id) }}" class="btn-btn-danger">Soft Delete</a></button>
+                      <button> <a href="{{ url('brand/delete/'.$brand->id) }}" class="btn-btn-danger">Delete</a></button>
 
                     </td>
                     @endif
@@ -83,7 +83,7 @@ All Category
         @enderror
       </div>
       <button type="submit" class="btn btn-primary">Add a Brand</button>
-  
+
     </div>
 </div>
 </div>
