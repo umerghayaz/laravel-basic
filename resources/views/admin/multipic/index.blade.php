@@ -11,7 +11,7 @@
       @foreach($images as $multi)
       <div class="col-md-4 mt-5">
            <div class="card">
-           <img src="{{ asset($multi->image) }}" alt="">
+           <img src="{{ asset($multi->image) }}" style="width:120;height:120;">
 
            </div>
 
@@ -34,7 +34,7 @@
            <div class="card-header"> Multi Image </div>
            <div class="card-body">
 
-           <form action="" method="POST" enctype="multipart/form-data">
+           <form action="{{ route('store.image')  }}" method="POST" enctype="multipart/form-data">
            @csrf
 
 

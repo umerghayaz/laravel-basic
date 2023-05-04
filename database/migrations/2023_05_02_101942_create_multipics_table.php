@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('multipics', function (Blueprint $table) {
             $table->id();
-            $table->string('images');
+            $table->string('image');
             $table->timestamps();
         });
     }

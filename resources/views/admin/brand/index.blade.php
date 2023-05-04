@@ -28,7 +28,7 @@
                   <tr>
                     <th scope="row">{{ $brands->firstItem()+$loop->index}}</th>
                     <td>{{ $brand->brand_name}}</td>
-                    <td><img src="{{asset($brand->brand_image)}}" style="width:76px;height:46px;"></td>
+                    <td><img src="{{asset($brand->brand_image)}}" ></td>
                     @if($brand->created_at==NULL)
                     <span class="text-danger">NO DATA SET</span>
                     @else
